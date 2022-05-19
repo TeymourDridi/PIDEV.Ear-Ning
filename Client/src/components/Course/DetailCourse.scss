@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css?family=Mukta:700');
+
+$bg: #f3f8fa;
+$white: #fff;
+$black: #282936;
+
+@mixin transition($property: all, $duration: 0.45s, $ease: cubic-bezier(0.65,0,.076,1)) {
+  transition: $property $duration $ease;
+}
+
+#containerTT {
+  box-sizing: border-box;
+  &::before, &::after {
+    box-sizing: border-box;
+  }
+}
+
+#bicontTT {
+  font-family: 'Mukta', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  min-height: 100vh;
+  background: $bg;
+}
+
+.learn-moreTT {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+  &.learn-moreTT {
+    width: 12rem;
+    height: auto;
+    .circleTT {
+      @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+      position: relative;
+      display: block;
+      margin: 0;
+      width: 3rem;
+      height: 3rem;
+      background: $black;
+      border-radius: 1.625rem;
+      .iconTT {
+        @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        background: $white;
+        &.arrowTT {
+          @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+          left: 0.625rem;
+          width: 1.125rem;
+          height: 0.125rem;
+          background: none;
+          &::before {
+            position: absolute;
+            content: '';
+            top: -0.25rem;
+            right: 0.6625rem;
+            width: 0.625rem;
+            height: 0.625rem;
+            border-top: 0.125rem solid #fff;
+            border-right: 0.125rem solid #fff;
+            transform: rotate(225deg);
+          }
+        }
+      }
+    }
+    .button-textTT {
+      @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0.75rem 0;
+      margin: 0 0 0 1.85rem;
+      color: $black;
+      font-weight: 700;
+      line-height: 1.6;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+  &:hover {
+    .circleTT {
+      width: 50%;
+      .iconTT {
+        &.arrowTT {
+          background: $white;
+          transform: translate(1rem, 0);
+        }
+      }
+    }
+    .button-textTT {
+      color: $white;
+    }
+  }
+}
+
+@supports (display: grid) {
+  #containerTT {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 0.625rem;
+    grid-template-areas: ". main main ." ". main main .";
+  }
+
+  #containerTT {
+    grid-area: main;
+    align-self: center;
+    justify-self: center;
+  }
+}
+
+
+/*naaaame*/
+
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:900');
+
+
+
+text {
+  fill: #35322a;
+  filter: url('#money');
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 40px;
+  font-weight: 900;
+}
+
+//description
+
+@import url('https://fonts.googleapis.com/css?family=Saira+Semi+Condensed');
+$font: 'Saira Semi Condensed', sans-serif;
+$font-color: #ffffff;
+$background: #39393B;
+$transition: .6s;
+$font-size: 5vw;
+
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+  #descDTT {
+
+    font-family: $font !important;
+  }
+  .main-container {
+  color: white;
+}
+.first-container, .second-container {
+  cursor: pointer;
+  position: relative
+}
+#descDTT {
+  position: relative;
+  letter-spacing: 2px;
+  font-size: 26px !important;
+}
+
+.first-container {
+  margin-bottom: 15px
+}
+                 span {
+                   display: inline-block;
+                   position: relative;
+                   margin-right: 5px;
+                   &:after {
+                     content: '';
+                     position: absolute;
+                     height: 100%;
+                     width: 0;
+                     top: 0;
+                     left: 0;
+                     transition: $transition;
+                     z-index: -5;
+                   }
+                 }
+@for $i from 1 through 100 {
+  .share:hover > h1 > span:nth-child(#{$i}):after {
+    position: absolute !important;
+    $delay: 100 * $i;
+    $random: (5 * 5) - 30;
+    background: grey;
+    width: 100%;
+    transition: $transition;
+    transition-delay: $delay + ms;
+    transform: rotate($random + deg);
+  }
+
+    .share:hover > #descDTT > span:nth-child(#{$i}) {
+
+      $delayTwo: 110 * $i;
+      color: white;
+      transition-delay: $delayTwo + ms;
+    }
+  }
+
